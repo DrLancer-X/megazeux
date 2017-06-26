@@ -139,7 +139,7 @@ endif
 
 # Shader renderers (OGL>=2, OGLES=2)
 ifeq (${BUILD_RENDER_GL_PROGRAM},1)
-core_cobjs += ${core_obj}/render_glsl.o
+core_cobjs += ${core_obj}/render_glsl.o ${core_obj}/render_glsl2.o
 endif
 
 #

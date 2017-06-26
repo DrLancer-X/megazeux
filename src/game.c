@@ -654,7 +654,7 @@ static void game_settings(struct world *mzx_world)
   set_context(CTX_F2_MENU);
 
 #ifdef CONFIG_RENDER_GL_PROGRAM
-  if(!strcmp(mzx_world->conf.video_output, "glsl"))
+  if(!strncmp(mzx_world->conf.video_output, "glsl", 4))
   {
     shader_option = 3;
     num_elements++;
@@ -682,7 +682,7 @@ static void game_settings(struct world *mzx_world)
     speed_pos = 8;
 
 #ifdef CONFIG_RENDER_GL_PROGRAM
-    if(!strcmp(mzx_world->conf.video_output, "glsl"))
+    if(!strncmp(mzx_world->conf.video_output, "glsl", 4))
     {
       mzx_res_get_extra_shader_dir(shader_path);
 

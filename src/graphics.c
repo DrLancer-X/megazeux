@@ -71,6 +71,7 @@ static const struct renderer_data renderers[] =
 #endif
 #if defined(CONFIG_RENDER_GL_PROGRAM)
   { "glsl", render_glsl_register },
+  { "glsl2", render_glsl2_register },
 #endif
 #if defined(CONFIG_RENDER_YUV)
   { "overlay1", render_yuv1_register },

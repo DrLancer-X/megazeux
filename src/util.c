@@ -66,12 +66,14 @@ static struct mzx_resource mzx_res[] = {
 #endif
 #ifdef CONFIG_RENDER_GL_PROGRAM
 #define SHADERS ASSETS "shaders/"
-  { SHADERS "scaler.vert",         NULL, false },
-  { SHADERS "scaler.frag",         NULL, false },
-  { SHADERS "tilemap.vert",        NULL, false },
-  { SHADERS "tilemap.frag",        NULL, false },
-  { SHADERS "tilemap.smzx.frag", NULL, false },
-  //{ SHADERS "tilemap.smzx3.frag",  NULL, false },
+  { SHADERS "scaler.vert",             NULL, false },
+  { SHADERS "scaler.frag",             NULL, false },
+  { SHADERS "tilemap.vert",            NULL, false },
+  { SHADERS "tilemap.frag",            NULL, false },
+  { SHADERS "tilemap.smzx.frag",       NULL, false },
+  { SHADERS "glsl2/tilemap.vert",      NULL, false },
+  { SHADERS "glsl2/tilemap.frag",      NULL, false },
+  { SHADERS "glsl2/tilemap.smzx.frag", NULL, false },
   { SHADERS "mouse.vert",          NULL, false },
   { SHADERS "mouse.frag",          NULL, false },
   { SHADERS "cursor.vert",         NULL, false },
