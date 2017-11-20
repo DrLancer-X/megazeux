@@ -1004,7 +1004,7 @@ static inline bool collision_pix_between(const struct sprite *spr, struct mask s
           tx = x - targ_m.dim.x;
           sch = (sy / CHAR_H * spr->width + sx / CHAR_W);
           tch = (ty / CHAR_H * targ->width + tx / CHAR_W);
-          
+
           mask_alloc_chr(spr, spr_m, sch, mzx_world);
           mask_alloc_chr(targ, targ_m, tch, mzx_world);
 
@@ -1071,6 +1071,8 @@ int sprite_colliding_xy(struct world *mzx_world, struct sprite *spr,
       spr->flags & SPRITE_CHAR_CHECK &&
       spr->flags & SPRITE_CHAR_CHECK2)
   {
+    if (!constrain_rectangle(sprite_rect, &collision_rect))
+      return -1;
     spr_mask = allocate_mask(&collision_sprite);
     spr_mask_allocated = true;
   }
@@ -1134,6 +1136,8 @@ int sprite_colliding_xy(struct world *mzx_world, struct sprite *spr,
           target_spr->flags & SPRITE_CHAR_CHECK &&
           target_spr->flags & SPRITE_CHAR_CHECK2)
       {
+        if (!constrain_rectangle(target_spr_rect, &target_col_rect))
+          continue;
         target_mask = allocate_mask(target_spr);
         target_mask_allocated = true;
       }
